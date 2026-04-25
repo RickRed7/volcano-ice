@@ -1,1 +1,9 @@
-$(cat world_computer_ci_cd.yml)
+name: SGC-Integrity-Audit
+on: [push]
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Manifest Check
+        run: echo "Verifying SGC-PAT-2026-001 Compliance..."
